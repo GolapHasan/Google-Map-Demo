@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class ViewController: UIViewController {
 
@@ -24,5 +25,17 @@ class ViewController: UIViewController {
         print("clickMeTapped")
     }
 
+}
+
+extension ViewController: GMSMapViewDelegate{
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+       print("didTapAt coordinate:", coordinate)
+    }
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        print("didChange position:", position)
+    }
+    
 }
 
